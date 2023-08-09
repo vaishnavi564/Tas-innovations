@@ -1,0 +1,60 @@
+import java.util.Scanner;
+
+public class CurrencyConverter {
+
+    public static void main(String[] args) {
+        double inrTousdRate = 0.012;
+        double inrToEurRate = 0.011;
+        double inrToGbpRate = 0.0095;
+        double inrToJpyRate = 1.72;
+        double inrTocnyRate = 0.087;
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Currency Converter");
+        System.out.println("===================");
+
+        System.out.print("Enter the amount in INR: ");
+        double amountINR = scanner.nextDouble();
+
+        System.out.println("Select the currency to convert to:");
+        System.out.println("1. US Dollar (USD)");
+        System.out.println("2. Euro (EUR)");
+        System.out.println("3. British Pound (GBP)");
+        System.out.println("4. Japanese Yen (JPY)");
+        System.out.println("5. Chinese Yuan (CNY)");
+        System.out.print("Enter your choice (1/2/3/4/5): ");
+
+        int choice = scanner.nextInt();
+
+        double convertedAmount = 0.0;
+
+        switch (choice) {
+            case 1:
+                convertedAmount = amountINR * inrTousdRate;
+                System.out.println("Converted amount in US Dollar (USD): " + convertedAmount);
+                break;
+            case 2:
+                convertedAmount = amountINR * inrToEurRate;
+                System.out.println("Converted amount in Euro (EUR): " + convertedAmount);
+                break;
+            case 3:
+                convertedAmount = amountINR *inrToGbpRate;
+                System.out.println("Converted amount in British pound (GBP): " + convertedAmount);
+                break;
+            case 4:
+            	convertedAmount = amountINR * inrToJpyRate;
+                System.out.println("Converted amount in Japanese Yen (JPY): " + convertedAmount);
+                break;
+            case 5:
+            	convertedAmount = amountINR * inrTocnyRate;
+                System.out.println("Converted amount in Chinese Yuan (CNY): " + convertedAmount);
+                break;
+            default:
+                System.out.println("Invalid choice. Please select 1, 2, 3, 4, or 5.");
+                break;
+        }
+
+        scanner.close();
+    }
+}
